@@ -1,13 +1,11 @@
-package com.example.springjpalock;
+package com.example.optimistic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringJpaLockApplication {
-
+public class OptimisticApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SpringJpaLockApplication.class, args);
+        SpringApplication.run(OptimisticApplication.class, args);
     }
-
 }
