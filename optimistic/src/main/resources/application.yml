@@ -10,9 +10,12 @@ spring:
 
   # JPA 설정
   jpa:
+    # entity로 테이블 생성 하고 schema.sql & data.sql 도 체크
+    defer-datasource-initialization: true
     open-in-view: false
+    show-sql: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
@@ -30,6 +33,12 @@ spring:
     username: sa
     password:
 
+  sql:
+    init:
+      encoding: UTF-8
+      schema-locations: classpath*:db/${database}/schema.sql
+      data-locations: classpath*:db/${database}/data.sql
+
 logging:
   level:
     org:
@@ -37,3 +46,5 @@ logging:
         sql: debug
         type: trace
 
+
+database: h2
